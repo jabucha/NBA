@@ -1,6 +1,6 @@
 # NBA Database stats
 
-Welcome! If you haven't noticed by now, I love :basketball:
+Welcome! 
 
 The purpose of repository is to build a personal NBA database.
 
