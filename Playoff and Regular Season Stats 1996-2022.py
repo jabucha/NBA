@@ -1,7 +1,7 @@
 """
 NBA STATS DATABASE
 """
-# This code was made available from the original author Ryan Davis https://github.com/rd11490 found under the NBA_Tutorials
+# This code was made available from the original author Ryan Davis https://github.com/rd11490 found under the NBA_Tutorials and finding_endpoints.
 # Minor changes were made in order to accommodate my requests and an updated Chrome browser due to the code being outdated.
 
 import pandas as pd
@@ -42,15 +42,29 @@ def extract_data(url):
 # endpoints
 # must update url and season year for every data extraction
 
-def player_stats_url(season):
+def regular_player_stats_url(season):
     return "https://stats.nba.com/stats/leaguedashplayerstats?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&GameScope=&GameSegment=&Height=&LastNGames=0&LeagueID=00&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PORound=0&PaceAdjust=N&PerMode=PerGame&Period=0&PlayerExperience=&PlayerPosition=&PlusMinus=N&Rank=N&Season=2019-20&SeasonSegment=&SeasonType=Regular+Season&ShotClockRange=&StarterBench=&TeamID=0&TwoWay=0&VsConference=&VsDivision=&Weight=".format(
         season)
 
 season = "2021-22"
 
-frame = extract_data(player_stats_url(season))
+frame = extract_data(regular_player_stats_url(season))
 print(frame)
 
 frame.to_csv("regular_season_stats_nba_player_data_{0}.csv".format(season), index=False)
 
 # Using this endpoint I am able to gather all the statistics listed on stats.nba.com from all regular seasons up to the 1996 season.
+
+# By changing the seasontype from regular+season to playoffs, you can perform the same order of operations to get all playoff stats up to the 1996 season.
+
+def playoffs_player_stats_url(season):
+    return "https://stats.nba.com/stats/leaguedashplayerstats?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&GameScope=&GameSegment=&Height=&LastNGames=0&LeagueID=00&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PORound=0&PaceAdjust=N&PerMode=PerGame&Period=0&PlayerExperience=&PlayerPosition=&PlusMinus=N&Rank=N&Season=2019-20&SeasonSegment=&SeasonType=Playoffs&ShotClockRange=&StarterBench=&TeamID=0&TwoWay=0&VsConference=&VsDivision=&Weight=".format(
+        season)
+
+season = "2021-22"
+
+frame = extract_data(playoffs_player_stats_url(season))
+print(frame)
+
+frame.to_csv("playoffs_stats_nba_player_data_{0}.csv".format(season), index=False)
+
