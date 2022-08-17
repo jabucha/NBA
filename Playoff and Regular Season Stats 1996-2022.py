@@ -46,11 +46,11 @@ def player_stats_url(season):
     return "https://stats.nba.com/stats/leaguedashplayerstats?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&GameScope=&GameSegment=&Height=&LastNGames=0&LeagueID=00&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PORound=0&PaceAdjust=N&PerMode=PerGame&Period=0&PlayerExperience=&PlayerPosition=&PlusMinus=N&Rank=N&Season=2019-20&SeasonSegment=&SeasonType=Regular+Season&ShotClockRange=&StarterBench=&TeamID=0&TwoWay=0&VsConference=&VsDivision=&Weight=".format(
         season)
 
-season = "2019-20"
+season = "2021-22"
 
 frame = extract_data(player_stats_url(season))
 print(frame)
 
 frame.to_csv("regular_season_stats_nba_player_data_{0}.csv".format(season), index=False)
 
-# Using this endpoint I am able to gather all the statistics from the playoffs and regular seasons up to the 1996 season.
+# Using this endpoint I am able to gather all the statistics listed on stats.nba.com from all regular seasons up to the 1996 season.
