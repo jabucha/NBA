@@ -53,7 +53,7 @@ print(frame)
 
 frame.to_csv("regular_season_stats_nba_player_data_{0}.csv".format(season), index=False)
 
-# Using this endpoint I am able to gather all the statistics from the playoffs and regular seasons up to the 1996 season.
+# Using this endpoint I am able to gather all traditional statistics from the playoffs and regular seasons up to the 1996 season.
 
 # By changing the seasontype from regular+season to playoffs and the season for each year, you can perform the same order of operations to get all playoff stats up to the 1996 season.
 
