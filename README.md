@@ -1,5 +1,7 @@
 # NBA Database stats
 
+Welcome! If you haven't noticed by now, I love :basketball:
+
 The purpose of repository is to build a personal NBA database.
 
 I plan to use Python to scrape the data into CSV files, SQL as a database to clean/maintain, and Power BI/Tableau for visualizations
